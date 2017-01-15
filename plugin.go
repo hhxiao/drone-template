@@ -2,9 +2,9 @@ package main
 
 import (
 	"errors"
-	"strings"
 	"fmt"
 	"io/ioutil"
+	"strings"
 )
 
 type (
@@ -65,7 +65,7 @@ func (p Plugin) Exec() error {
 		if err != nil {
 			return err
 		}
-		fmt.Printf("processed %s\n", file)
+		fmt.Printf("Processed %s\n", file)
 	}
 	return nil
 }

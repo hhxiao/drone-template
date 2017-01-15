@@ -86,7 +86,7 @@ pipeline:
 : converts a string to lowercase. Example `{{lowercase build.author}}`
 
 **datetime**
-: converts a unix timestamp to a date time string. Example `{{datetime build.started}}`
+: converts a unix timestamp to a date time string. Example `{{datetime build.started "2006-01-02 15:04:05" ""}}`
 
 **success**
 : returns true if the build is successful

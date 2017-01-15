@@ -32,44 +32,47 @@ pipeline:
 **repo.link**
 : repository link
 
+**build.number**
+: build number
+
 **build.status**
 : build status type enumeration, either `success` or `failure`
 
 **build.event**
 : build event type enumeration, one of `push`, `pull_request`, `tag`, `deployment`
 
-**build.number**
-: build number
-
-**build.commit**
-: git sha for current commit
-
-**build.message**
-: git message for current commit
-
-**build.branch**
-: git branch for current commit
-
-**build.tag**
-: git tag for current commit
-
-**build.ref**
-: git ref for current commit
-
-**build.author**
-: git author for current commit
-
-**build.email**
-: git author email for current commit
-
-**build.link**
-: link the the build results in drone
-
 **build.created**
 : unix timestamp for build creation
 
 **build.started**
 : unix timestamp for build started
+
+**build.finished**
+: unix timestamp for build finished
+
+**build.link**
+: link the the build results in drone
+
+**commit.sha**
+: git sha for current commit
+
+**commit.ref**
+: git ref for current commit
+
+**commit.message**
+: git message for current commit
+
+**commit.branch**
+: git branch for current commit
+
+**commit.tag**
+: git tag for current commit
+
+**commit.author**
+: git author for current commit
+
+**commit.email**
+: git author email for current commit
 
 # Template Function Reference
 

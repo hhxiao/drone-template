@@ -31,12 +31,8 @@ type (
 		Branch  string
 		Tag     string
 		Message string
-		Author  Author
-	}
-
-	Author struct {
-		Name  string
-		Email string
+		Name    string
+		Email   string
 	}
 
 	Config struct {

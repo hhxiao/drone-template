@@ -153,10 +153,8 @@ func run(c *cli.Context) {
 			Branch:  c.String("build.branch"),
 			Tag:     c.String("build.tag"),
 			Message: c.String("build.message"),
-			Author: Author{
-				Name:  c.String("build.author"),
-				Email: c.String("build.email"),
-			},
+			Name:    c.String("build.author"),
+			Email:   c.String("build.email"),
 		},
 		Config: Config{
 			Templates: c.String("templates"),

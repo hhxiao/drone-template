@@ -24,6 +24,10 @@ type (
 		Link     string
 	}
 
+	Job struct {
+		Started int64
+	}
+
 	Commit struct {
 		Sha     string
 		Ref     string
@@ -44,6 +48,7 @@ type (
 		Build  Build
 		Commit Commit
 		Config Config
+		Job    Job
 	}
 )
 

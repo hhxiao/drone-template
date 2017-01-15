@@ -84,6 +84,12 @@ func main() {
 			EnvVar: "DRONE_BUILD_LINK",
 		},
 
+		cli.Int64Flag{
+			Name:   "job.started",
+			Usage:  "job started",
+			EnvVar: "DRONE_JOB_STARTED",
+		},
+
 		//
 		// commit args
 		//
@@ -127,6 +133,10 @@ func main() {
 			EnvVar: "DRONE_COMMIT_AUTHOR_EMAIL",
 		},
 	}
+	//for _, e := range os.Environ() {
+	//	pair := strings.Split(e, "=")
+	//	fmt.Println(pair[0] + ":" + os.Getenv(pair[0]))
+	//}
 
 	app.Run(os.Args)
 }
@@ -146,6 +156,9 @@ func run(c *cli.Context) {
 			Started:  int64(c.Int("build.started")),
 			Finished: int64(c.Int("build.finished")),
 			Link:     c.String("build.link"),
+		},
+		Job: Job{
+			Started: c.Int64("job.started"),
 		},
 		Commit: Commit{
 			Sha:     c.String("build.sha"),

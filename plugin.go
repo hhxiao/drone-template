@@ -1,10 +1,8 @@
 package main
 
 import (
-	"errors"
 	"fmt"
 	"io/ioutil"
-	"strings"
 )
 
 type (
@@ -40,7 +38,7 @@ type (
 	}
 
 	Config struct {
-		Templates string
+		Templates []string
 	}
 
 	Plugin struct {
@@ -53,11 +51,7 @@ type (
 )
 
 func (p Plugin) Exec() error {
-	if strings.TrimSpace(p.Config.Templates) == "" {
-		return errors.New("No templates specified")
-	}
-	files := strings.Split(strings.TrimSpace(p.Config.Templates), ",")
-	for _, file := range files {
+	for _, file := range p.Config.Templates {
 		data, err := ioutil.ReadFile(file)
 		if err != nil {
 			return err

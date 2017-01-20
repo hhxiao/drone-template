@@ -16,10 +16,10 @@ func main() {
 	app.Action = run
 	app.Version = version
 	app.Flags = []cli.Flag{
-		cli.StringFlag{
+		cli.StringSliceFlag{
 			Name:   "templates",
-			Usage:  "template files(comma separated)",
-			EnvVar: "PLUGIN_TEMPLATES",
+			Usage:  "template files",
+			EnvVar: "PLUGIN_TEMPLATES,PLUGIN_TEMPLATE",
 		},
 
 		//
@@ -170,7 +170,7 @@ func run(c *cli.Context) {
 			Email:   c.String("build.email"),
 		},
 		Config: Config{
-			Templates: c.String("templates"),
+			Templates: c.StringSlice("templates"),
 		},
 	}
 

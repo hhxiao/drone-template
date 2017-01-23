@@ -47,6 +47,7 @@ type (
 		Commit Commit
 		Config Config
 		Job    Job
+		Var    map[string]string
 	}
 )
 

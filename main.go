@@ -5,6 +5,7 @@ import (
 	"github.com/codegangsta/cli"
 	_ "github.com/joho/godotenv/autoload"
 	"os"
+	"strings"
 )
 
 var version string // build number set at compile-time
@@ -172,6 +173,15 @@ func run(c *cli.Context) {
 		Config: Config{
 			Templates: c.StringSlice("templates"),
 		},
+		Var: make(map[string]string),
+	}
+
+	for _, e := range os.Environ() {
+		pair := strings.Split(e, "=")
+		if strings.HasPrefix(pair[0], "var_") {
+			key := strings.SplitAfter(pair[0], "_")[1]
+			plugin.Var[key] = os.Getenv(pair[0])
+		}
 	}
 
 	if err := plugin.Exec(); err != nil {

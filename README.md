@@ -3,7 +3,7 @@
 Inject building environment variables into template files.
 
 [![Build Status](https://travis-ci.org/hhxiao/drone-template.svg?branch=master)](https://travis-ci.org/hhxiao/drone-template)
-[![Go Doc](https://godoc.org/github.com/drone-plugins/drone-template?status.svg)](http://godoc.org/github.com/hhxiao/drone-template)
+[![Go Doc](https://godoc.org/github.com/hhxiao/drone-template?status.svg)](http://godoc.org/github.com/hhxiao/drone-template)
 [![Go Report](https://goreportcard.com/badge/github.com/hhxiao/drone-template)](https://goreportcard.com/report/github.com/hhxiao/drone-template)
 [![MicroBadger](https://images.microbadger.com/badges/image/hhxiao/drone-template.svg)](https://microbadger.com/images/hhxiao/drone-template "Get your own image badge on microbadger.com")
 
